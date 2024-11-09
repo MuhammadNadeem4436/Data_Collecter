@@ -1,0 +1,49 @@
+<%- include("partials/header.ejs") %>
+    <!-- <h1>Admin Page</h1>
+    <p>
+        <%= AdminString %>
+    </p> -->
+
+    <div class="admin-page">
+        <h1>Data Table</h1>
+        <form action="/delete" method="post">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">E-Mail</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (typeof data !=='undefined' && data.length> 0) { %>
+                        <% data.forEach(element=> { %>
+                            <% var Name=element.name %>
+                                <% var Email=element.email %>
+                                    <% var PNumber=element.pnumber %>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>
+                                                <%= Name %>
+                                            </td>
+                                            <td>
+                                                <%= Email %>
+                                            </td>
+                                            <td>
+                                                <%= PNumber %>
+                                            </td>
+                                            <td>
+                                                <button class="delete-btn" type="submit" name="delete" value= <%= element._id %>>✖️</button>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                            <% } %>
+                </tbody>
+            </table>
+        </form>
+
+    </div>
+
+    <%- include("partials/footer.ejs") %>

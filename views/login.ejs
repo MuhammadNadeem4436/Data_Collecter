@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+  <div class="data-form" style="margin-bottom: 70px;">
+    <h1>LOG IN</h1>
+
+    <form action="/login" method="post" class="needs-validation" novalidate>
+
+      <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" readonly class="form-control" id="staticEmail" value="email@example.com" required>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password </label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="otp" required>
+          <div class="invalid-feedback">Please enter your password.</div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-4" name="submit">Submit</button>
+
+    </form>
+  </div>
+
+  <%- include("partials/footer.ejs") %>
